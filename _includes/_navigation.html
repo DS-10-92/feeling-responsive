@@ -1,19 +1,29 @@
+<!-*************** ********** Comment Section ************** *************** ->
 {% comment %}
 *
 *  To customize the navigation of *Feeling Responsive*,
 *  edit `_data/navigation.yml`.
 *
 {% endcomment %}
+<!-*************** ********** Comment Section ************** *************** ->
+
+<!-*************** **********  Section ************** *************** ->
 <div id="navigation" class="sticky">
   <nav class="top-bar" role="navigation" data-topbar>
     <ul class="title-area">
       <li class="name">
-      <h1 class="show-for-small-only"><a href="{{ site.url }}{{ site.baseurl }}" class="icon-tree"> {{ site.title }}</a></h1>
-    </li>
+        <h1 class="show-for-small-only"><a href="{{ site.url }}{{ site.baseurl }}" class="icon-tree"> {{ site.title }}</a></h1>
+      </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span>Nav</span></a>
+      </li>
     </ul>
+    
     <section class="top-bar-section">
+      
+
+<!-*************** ********** Comment Section ************** *************** ->
 {% comment %}
 
     ____  _       __    __     _   __            _             __  _
@@ -24,7 +34,10 @@
         /____/                                 /____/
 
 {% endcomment %}
+<!-*************** ********** Comment Section ************** *************** ->
+      
       <ul class="right">
+         
         {% for link in site.data.navigation %}
 
               {% if link.url contains 'http' %}
@@ -34,15 +47,33 @@
               {% else %}
                 {% assign domain = site.url %}
               {% endif %}
-
-          {% comment %}   If there are links for right side begin   {% endcomment %}
+        
+          <!-*************** ********** Comment Section ************** *************** ->
+          {% comment %}   
+          If there are links for right side begin   
+          {% endcomment %}
+          <!-*************** ********** Comment Section ************** *************** ->
           {% if link.side == 'right' %}
-            {% comment %}   If right side WITHOUT dropdown menu do   {% endcomment %}
+        
+        
+        
+            <!-*************** ********** Comment Section ************** *************** ->
+            {% comment %}   
+            If right side WITHOUT dropdown menu do   
+            {% endcomment %}
+            <!-*************** ********** Comment Section ************** *************** ->
+        
             {% if link.dropdown == nil %}
+        
               <li class="divider"></li>
-              <li{% if link.url == page.url %} class="active"{% elsif page.homepage == true and link.url == '/' %} class="active"{% endif %}><a {% if link.class %}class="{{link.class}}"{% endif %} href="{{ domain }}{{ site.baseurl }}{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title | escape }}</a></li>
+              <li{% if link.url == page.url %} class="active"{% elsif page.homepage == true and link.url == '/' %} class="active"{% endif %}>
+                <a {% if link.class %}class="{{link.class}}"{% endif %} href="{{ domain }}{{ site.baseurl }}{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title | escape }}</a>
+               </li>
 
-            {% comment %}   If right side WITH dropdown menu do   {% endcomment %}
+            {% comment %}   
+            If right side WITH dropdown menu do   
+            {% endcomment %}
+            
             {% else %}
 
               <li class="divider"></li>
@@ -68,6 +99,11 @@
         {% endfor %}
         {% comment %}   First loop finished 1   {% endcomment %}
       </ul>
+
+      
+      
+<!-      
+      
 {% comment %}
 
     __         ______     _   __            _             __  _
@@ -125,4 +161,5 @@
       </ul>
     </section>
   </nav>
-</div><!-- /#navigation -->
+</div><!-- /#navigation --> 
+->
