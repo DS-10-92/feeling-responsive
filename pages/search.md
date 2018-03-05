@@ -1,7 +1,7 @@
 ---
-permalink: /search/
+permalink: /people/
 layout: page
-title: "Search"
+title: "People"
 sitemap: false
 ---
 
